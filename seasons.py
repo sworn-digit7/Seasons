@@ -8,16 +8,20 @@ def main():
 
 def minutes(x):
     
-    x = x.split("-")
+    try:
+        x = x.split("-")
 
-    today = date.today()
-    date1 = date(int(x[0]), int(x[1]), int(x[2]))
+        today = date.today()
+        date1 = date(int(x[0]), int(x[1]), int(x[2]))
 
-    difference = today - date1
+        difference = today - date1
 
-    min = difference.days
+        min = difference.days
 
-    print(min * 60)
+        print(min * 60)
+
+    except ValueError:
+        sys.exit("Invalid date")
 
 
 if __name__ == "__main__":
