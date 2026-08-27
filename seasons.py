@@ -1,5 +1,7 @@
 from datetime import date
 import sys
+import inflect
+
 
 def main():
     dob = input("Date of birth: ")
@@ -16,9 +18,10 @@ def minutes(x):
 
         difference = today - date1
 
-        min = difference.days
+        mins = int((difference.days) * 24 * 60)
 
-        print(min * 60)
+        p = inflect.engine()
+        print(p.number_to_words(mins))
 
     except ValueError:
         sys.exit("Invalid date")
