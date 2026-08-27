@@ -21,7 +21,7 @@ def minutes(x):
         mins = int((difference.days) * 24 * 60)
 
         p = inflect.engine()
-        print(p.number_to_words(mins))
+        print(f"{p.number_to_words(mins).replace('and ', '').capitalize()} minutes")
 
     except ValueError:
         sys.exit("Invalid date")
